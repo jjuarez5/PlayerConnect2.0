@@ -2,11 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/.obj
-/PlayerConnect/.vs/PlayerConnect/DesignTimeBuild
-/PlayerConnect/.vs/PlayerConnect/v17/.futdcache.v1
-/PlayerConnect/PlayerConnect/obj/Release/net6.0
-/PlayerConnect/.vs/PlayerConnect/v17/.suo
-/PlayerConnect/PlayerConnect/obj/Debug/net6.0
-/PlayerConnect/PlayerConnect/PlayerConnect.csproj.user
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
