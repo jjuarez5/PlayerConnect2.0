@@ -8,3 +8,8 @@ _ReSharper.*
 bin
 obj
 packages
+/.vs
+*.v2
+*.v1
+/PlayerConnect/.vs/PlayerConnect/v17
+/PlayerConnect/PlayerConnect/obj
