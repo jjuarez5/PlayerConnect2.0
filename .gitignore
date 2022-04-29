@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs
+/.obj
+/PlayerConnect/.vs/PlayerConnect/DesignTimeBuild
+/PlayerConnect/.vs/PlayerConnect/v17/.futdcache.v1
+/PlayerConnect/PlayerConnect/obj/Release/net6.0
+/PlayerConnect/.vs/PlayerConnect/v17/.suo
+/PlayerConnect/PlayerConnect/obj
