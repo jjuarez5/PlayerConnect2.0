@@ -13,3 +13,4 @@ packages
 *.v1
 /PlayerConnect/.vs/PlayerConnect/v17
 /PlayerConnect/PlayerConnect/obj
+/PlayerConnect/.vs/PlayerConnect/config
