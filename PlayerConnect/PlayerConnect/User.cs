@@ -1,18 +1,26 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace PlayerConnect
 {
     public class User
     {
-        [JsonProperty(PropertyName="Id", Required = Required.Default)]
+        // **START HERE, SEE HOW TO MAKE SOME REQUIRED AND SOME NOT AS IT'S AFFECTING PAYLOAD RESPONSE
+        [JsonProperty(PropertyName="id")]
         public string Id { get; set; }
-        [JsonProperty(PropertyName="UserName", Required = Required.Always)]
+
+        [Required]
+        [JsonProperty(PropertyName="UserName")]
         public string Name { get; set; }
-        [JsonProperty(PropertyName ="Friends", Required = Required.Default)]
+        [JsonProperty(PropertyName ="Friends")]
         public List<User> Friends { get; set; }
-        [JsonProperty(PropertyName ="Email", Required = Required.Always)]
+
+        [Required]
+        [JsonProperty(PropertyName ="Email")]
         public string Email { get; set; }
-        [JsonProperty(PropertyName ="Password", Required = Required.Always)]
+
+        [Required]
+        [JsonProperty(PropertyName ="Password")]
         public string Password { get; set; }
 
         public bool IsValid()
