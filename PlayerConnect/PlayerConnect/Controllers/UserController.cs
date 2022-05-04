@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.Cosmos;
 
 namespace PlayerConnect.Controllers
 {
@@ -13,7 +14,7 @@ namespace PlayerConnect.Controllers
         }
 
         [HttpPost]
-       public async Task<ActionResult> CreateUser([FromBody] User user)
+        public async Task<ActionResult> CreateUser([FromBody] User user)
         {
             ActionResult result = BadRequest();
 
@@ -28,6 +29,47 @@ namespace PlayerConnect.Controllers
             }
 
             return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("{userId}")]
+        public async Task<User> GetUserAsync(string userId)
+        {
+            try
+            {
+                var result = await this._cosmosDbClient.GetUserAsync(userId).ConfigureAwait(false);
+                return result;
+            }
+            catch (CosmosException)
+            {
+
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetUsersAsync()
+        {
+            List<User> users = new List<User>();
+            try
+            {
+                users = await this._cosmosDbClient.GetAllUsersAsync();
+            }
+            catch (CosmosException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return new JsonResult(users);
         }
     }
 }
