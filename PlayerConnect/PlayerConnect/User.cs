@@ -5,7 +5,7 @@ namespace PlayerConnect
 {
     public class User
     {
-        // **START HERE, SEE HOW TO MAKE SOME REQUIRED AND SOME NOT AS IT'S AFFECTING PAYLOAD RESPONSE
+
         [JsonProperty(PropertyName="id")]
         public string Id { get; set; }
 
